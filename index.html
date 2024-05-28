@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=2, initial-scale=1.0">
+    <title>calcular</title>
+    <link rel="stylesheet" href="style_form.css">
+</head>
+<body>
+    <div class="tudo">
+    <h2>Informe seu nome:</h2>
+
+    <input type="text" id="nomeInput">
+    <button onclick="exibirSaudacao()">Salvar</button>
+
+    <p id="mensagemSaudacao"></p>
+
+    <label class="num1" for="num1">Número 1:</label>
+        <input type="number" id="num1" name="num1" required>
+        <br>
+        
+    <label for="num1">Número 2:</label>
+        <input type="number" id="num2" name="num2" required>
+        <br>
+    </div>
+    <p>Operações</p>
+    <div class="botao">
+        <button onclick="somar()">+</button>
+        <button onclick="sub()">-</button>
+        <button onclick="mult()">*</button>
+        <button onclick="divi()">/</button>
+        
+    </div>
+    <br>
+        <p>Resultado</p>
+        <p id="res"></p>
+
+        <button onclick="limpar()">Limpar</button><br>
+    </div>
+        <script> 
+
+
+            function somar(){
+                var num1 = document.getElementById("num1").value
+                var num2 = document.getElementById("num2").value
+                var resultado = parseInt(num1) + parseInt(num2)
+                document.getElementById("res").innerHTML = resultado
+            }
+
+            function sub(){
+                var num1 = document.getElementById("num1").value
+                var num2 = document.getElementById("num2").value
+                var resultado = parseInt(num1) - parseInt(num2)
+                document.getElementById("res").innerHTML = resultado
+            }
+
+            function mult(){
+                var num1 = document.getElementById("num1").value
+                var num2 = document.getElementById("num2").value
+                var resultado = parseInt(num1) * parseInt(num2)
+                document.getElementById("res").innerHTML = resultado
+            }
+
+
+            function divi(){
+                var num1 = document.getElementById("num1").value
+                var num2 = document.getElementById("num2").value
+                var resultado = parseInt(num1) / parseInt(num2)
+                document.getElementById("res").innerHTML = resultado
+            }
+
+            function exibirSaudacao() {
+        var nome = document.getElementById("nomeInput").value;
+        if (nome.trim() === "") {
+            alert("Por favor, informe seu nome.");
+        } else {
+            document.getElementById("mensagemSaudacao").innerText = "Olá, " + nome + "!";
+        }
+    }
+    
+    
+    function limpar() {
+    document.getElementById("num1").value = "";
+    document.getElementById("num2").value = "";
+    document.getElementById("res").innerText = "";
+    document.getElementById("nomeInput").value = "";
+    document.getElementById("mensagemSaudacao").innerText = "";
+}
+
+ 
+        </script>
+</body>
+</html>
